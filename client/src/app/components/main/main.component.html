@@ -1,0 +1,4 @@
+<div class="main">
+    <app-taskcard class="task" *ngFor="let task of _data.tasks" [task]="task"></app-taskcard>
+    <a mat-flat-button color="accent" routerLink="/addtask">new-task</a>
+</div>

@@ -1,0 +1,17 @@
+<form [formGroup]="myForm" (ngSubmit)="handleSubmit()">
+    <mat-form-field appearance="outline">
+        <mat-label>description</mat-label>
+        <input matInput placeholder="description" formControlName="desc">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>user</mat-label>
+        <mat-select formControlName="user">
+            <mat-option value="" selected disabled>Select User</mat-option>
+            <mat-option [value]="user._id" *ngFor="let user of users">
+                {{user.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="primary">Add Task</button>
+    <a mat-flat-button color="accent" routerLink="/main">back to main page</a>
+</form>

@@ -1,0 +1,14 @@
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title>{{task.desc}}</mat-card-title>
+        <mat-card-subtitle>{{task.date | date:"hh:mm dd.MM.yyyy"}}</mat-card-subtitle>
+        <mat-card-subtitle>task of: {{task.user.name}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+        <mat-checkbox type="checkbox" [checked]="task.completed"
+            (click)="task.completed=!task.completed;changecompleted()"></mat-checkbox>
+        <button (click)="deletetask()" mat-button>
+            <mat-icon>restore_from_trash</mat-icon>
+        </button>
+    </mat-card-actions>
+</mat-card>
